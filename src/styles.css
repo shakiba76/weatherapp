@@ -1,0 +1,45 @@
+.app {
+  text-align: center;
+}
+.days {
+  color: #ffcd83;
+  font-size: 17px;
+}
+.coder {
+  color: #ffadc2;
+}
+.temp {
+  color: #ff7043;
+  font-size: 16px;
+}
+.tomorrow {
+  font-size: 36px;
+}
+.tomorow {
+  font-size: 16px;
+  font-style: italic;
+}
+.current {
+  color: #4eae53;
+  font-size: 48px;
+}
+box {
+  position: relative;
+  top: -30px;
+  right: -80px;
+  padding: 0;
+}
+button {
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border-color: #8ec351;
+  border-radius: 100%;
+}
+input {
+  margin-top: 30px;
+  border: solid 2px #4eae53;
+  border-radius: 50%;
+  padding: 15px;
+}

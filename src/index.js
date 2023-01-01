@@ -7,6 +7,10 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#city-temperature");
   temperatureElement.innerHTML = `${temperature}`;
+  let descriptionWeather = document.querySelector("#description");
+  descriptionWeather.innerHTML = `${response.data.weather[0].description}`;
+  let date = document.querySelector(".name-day");
+  date.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -20,7 +24,13 @@ function submittingCity(event) {
   let cityName = document.querySelector(".city");
   cityName.innerHTML = searchInputElement;
 }
-let now = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  return `${day} ${hour}:${minutes}`;
+}
 let days = [
   "Saturday",
   "Sunday",
@@ -30,11 +40,6 @@ let days = [
   "Thursday",
   "Friday",
 ];
-let day = days[now.getDay()];
-let hour = now.getHours();
-let minutes = now.getMinutes();
-let currentDay = document.querySelector(".name-day");
-currentDay.innerHTML = `${day} ${hour}:${minutes}`;
-search("Tehran");
+search("Teran");
 let form = document.querySelector(".searching-city");
 form.addEventListener("submit", submittingCity);

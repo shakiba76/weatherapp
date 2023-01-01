@@ -2,10 +2,14 @@ function showTemperature(response) {
   let apiKey = "839f4fb8fd4ed856783401ab07d70036";
   let city = document.querySelector(`#search`);
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}`;
-  axios.get(`&${apiUrl}&appid=${apiKey}`).then(showTemperature);
   let temperature = Math.round(response.data.main.tempe);
   let temperatureElement = document.querySelector("#city-temperature");
   temperatureElement.innerHTML = `${temperature}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let now = new Date();
 let days = [
@@ -30,3 +34,4 @@ function search(event) {
 }
 let form = document.querySelector(".searching-city");
 form.addEventListener("submit", search);
+axios.get(`&${apiUrl}&appid=${apiKey}`).then(showTemperature);

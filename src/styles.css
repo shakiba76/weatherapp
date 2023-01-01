@@ -1,4 +1,9 @@
-.app {
+body {
+  border: 3px solid #b1c8dd;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px 10px;
+  max-width: 600px;
   text-align: center;
 }
 .days {
